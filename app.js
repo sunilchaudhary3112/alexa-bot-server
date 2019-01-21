@@ -24,7 +24,7 @@ module.exports = function () {
     waitForMoreResponsesMs: 200,  //milliseconds to wait for additional webhook responses
             
     amzn_appId: "amzn1.ask.skill.33b43a31-cb55-478b-94f3-68e4d7d7c379",
-    channelSecretKey: 'Mjf9woVb6311DGY9Ck2CL4G8Hj4PvIpW', // ebs
+    channelSecretKey: 'BW0fo4wtm88kZVeGv5qb3tlInET44H5o', // ebs
     channelUrl: 'https://b2b34218.ngrok.io/connectors/v1/tenants/chatbot-tenant/listeners/webhook/channels/CBC03DDE-25F4-48EA-A41E-9D2AC9B294A0'        
   };
 
