@@ -23,8 +23,8 @@ module.exports = function () {
     allowConfigUpdate: true, //set to false to turn off REST endpoint of allowing update of metadata
     waitForMoreResponsesMs: 200,  //milliseconds to wait for additional webhook responses
             
-    amzn_appId: "amzn1.ask.skill.33b43a31-cb55-478b-94f3-68e4d7d7c379",
-    channelSecretKey: 'BW0fo4wtm88kZVeGv5qb3tlInET44H5o', // ebs
+    amzn_appId: "amzn1.ask.skill.d355a70d-52dc-4f93-a2a9-07f6e8291894",
+    channelSecretKey: 'U27IuQgEGNRpQqcCSxcpis4PtJbbSgb4', // ebs
     channelUrl: 'https://b2b34218.ngrok.io/connectors/v1/tenants/chatbot-tenant/listeners/webhook/channels/CBC03DDE-25F4-48EA-A41E-9D2AC9B294A0'        
   };
 
@@ -103,6 +103,11 @@ module.exports = function () {
         res.sendStatus(200).send();
       });
     }
+
+    app.get('/home', bodyParser.json(), function (req, res) {
+      console.log("inside /home");
+      res.send('Welcome to home page!');
+    });
 
     app.post('/singleBotWebhook/messages', bodyParser.json({
       verify: webhookUtil.bodyParserRawMessageVerify
@@ -343,6 +348,12 @@ module.exports = function () {
       name: 'alexa',
       method: 'POST',
       endpoint: '/alexa/app'
+    });
+
+    app.locals.endpoints.push({
+      name: 'home',
+      method: 'GET',
+      endpoint: '/home'
     });
 
     return app;
